@@ -12,32 +12,33 @@ describe('Queue', () => {
       (queue instanceof Queue).should.be.equals(true);
     });
   });
-  describe('Push Method', () => {
+  describe('enqueue Method', () => {
     it('queue size should be 0 when queue is empty', () => {
       let queue = new Queue();
       queue.size.should.be.equals(0);
-      (queue.pop() === undefined).should.be.equals(true);
+      (queue.dequeue() === undefined).should.be.equals(true);
     });
     it('queue size should be 1 when queue has one element', () => {
       let queue = new Queue();
-      queue.push(1);
+      queue.enqueue(1);
       (queue.size == 1).should.be.equals(true);
     });
-    it('queue push method should push element at the end of the queue', () => {
+    it('queue enqueue method should enqueue element at the end of the queue', () => {
       let queue = new Queue();
-      (queue.push(1) === 1).should.be.equals(true);
-      (queue.push(10) === 2).should.be.equals(true);
-      (queue.push(40) === 3).should.be.equals(true);
-      (queue.push() === undefined).should.be.equals(true);
+      (queue.enqueue(1) === 1).should.be.equals(true);
+      (queue.enqueue(10) === 2).should.be.equals(true);
+      (queue.enqueue(40) === 3).should.be.equals(true);
+      (queue.enqueue() === undefined).should.be.equals(true);
     });
   });
-  describe('Pop Method', () => {
-    it('queue pop method should pop element from the end of the queue', () => {
+  describe('dequeue Method', () => {
+    it('queue dequeue method should dequeue element from the end of the queue', () => {
       let queue = new Queue();
-      queue.push(1);
-      queue.push(2);
-      (queue.pop() == 1).should.be.equals(true);
-      (queue.pop() == 2).should.be.equals(true);
+      queue.enqueue(1);
+      queue.enqueue(2);
+      console.log(queue);
+      (queue.dequeue() == 1).should.be.equals(true);
+      (queue.dequeue() == 2).should.be.equals(true);
     });
   });
 });

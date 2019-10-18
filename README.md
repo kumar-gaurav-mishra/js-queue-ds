@@ -15,7 +15,7 @@ const Queue = require('js-queue-ds');
 
 let queue = new Queue();
 
-queue.push(1); // Push 1 to the queue
-queue.pop(); // Pop 1 from the queue
+queue.enqueue(1); // adds 1 at the end
+queue.dequeue(); // removes 1 from the begining
 queue.size; // Gives you size of the queue
 ```
