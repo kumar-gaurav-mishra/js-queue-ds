@@ -9,12 +9,12 @@ class Queue {
   constructor() {
     this.first = null;
     this.last = null;
-    this.length = 0;
+    this.size = 0;
   }
   push(value) {
     if (!value) return undefined;
     let node = new Node(value);
-    if (this.length === 0) {
+    if (this.size === 0) {
       this.first = node;
       this.last = node;
     } else {
@@ -25,20 +25,20 @@ class Queue {
       }
       first.next = node;
     }
-    this.length += 1;
-    return this;
+    this.size += 1;
+    return this.size;
   }
   pop() {
-    if (this.length === 0) return undefined;
+    if (this.size === 0) return undefined;
     let node = this.first;
-    if (this.length === 1) {
+    if (this.size === 1) {
       this.first = null;
       this.last = null;
     } else {
       this.first = this.first.next;
     }
-    this.length -= 1;
-    return node;
+    this.size -= 1;
+    return node.value;
   }
 }
 module.exports = Queue;

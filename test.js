@@ -13,22 +13,21 @@ describe('Queue', () => {
     });
   });
   describe('Push Method', () => {
-    it('queue length should be 0 when queue is empty', () => {
+    it('queue size should be 0 when queue is empty', () => {
       let queue = new Queue();
-      queue.length.should.be.equals(0);
+      queue.size.should.be.equals(0);
       (queue.pop() === undefined).should.be.equals(true);
     });
-    it('queue length should be 1 when queue has one element', () => {
+    it('queue size should be 1 when queue has one element', () => {
       let queue = new Queue();
       queue.push(1);
-      (queue.length == 1).should.be.equals(true);
+      (queue.size == 1).should.be.equals(true);
     });
     it('queue push method should push element at the end of the queue', () => {
       let queue = new Queue();
-      queue.push(1);
-      queue.push(2);
-      queue.push(3);
-      (queue.last.value == 3).should.be.equals(true);
+      (queue.push(1) === 1).should.be.equals(true);
+      (queue.push(10) === 2).should.be.equals(true);
+      (queue.push(40) === 3).should.be.equals(true);
       (queue.push() === undefined).should.be.equals(true);
     });
   });
@@ -37,8 +36,8 @@ describe('Queue', () => {
       let queue = new Queue();
       queue.push(1);
       queue.push(2);
-      (queue.pop().value == 1).should.be.equals(true);
-      (queue.pop().value == 2).should.be.equals(true);
+      (queue.pop() == 1).should.be.equals(true);
+      (queue.pop() == 2).should.be.equals(true);
     });
   });
 });

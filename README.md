@@ -17,5 +17,5 @@ let queue = new Queue();
 
 queue.push(1); // Push 1 to the queue
 queue.pop(); // Pop 1 from the queue
-queue.length; // Gives you length of the queue
+queue.size; // Gives you size of the queue
 ```
